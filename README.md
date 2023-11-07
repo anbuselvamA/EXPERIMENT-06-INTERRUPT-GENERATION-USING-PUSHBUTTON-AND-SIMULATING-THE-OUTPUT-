@@ -38,48 +38,33 @@ One important thing to note here is that same number pins are connected to line 
 
 Now each of these lines EXTI0-EXTI15 can be used to trigger an interrupt on different modes of the signal : rising edge, falling edge or rising_falling edge.
 ## Procedure:
- 1. click on STM 32 CUBE IDE, the following screen will appear 
+ Open a new STM32 Project.
 
- 2. click on FILE, click on new stm 32 project 
+Selecting GPIO Ports
 
-3. select the target to be programmed  as shown below and click on next 
+PA9 -> GPIO EXTI9
 
+PA11 -> GPIO Output
 
-4.select the program name 
+Configure the PA9 Port at Pull up Mode followed by Click NVIC function and select enable.
 
-5. corresponding ioc file will be generated automatically 
+Select RCC function followed by click High speed clock -> Crystal/ceramic Resonator.
 
+Select Clock configuration followed by Select -> input frequency -> HSE -> Enable css
 
-6.select the appropriate pins as gipo, in or out, USART or required options and configure 
+Remove error using Resolve clock issue and generate the code.
 
+define the callback function.
 
-7.click on cntrl+S , automaticall C program will be generated 
+Build Debug and Create 'hex.file'
 
-8. edit the program and as per required 
+Open a new Proteus Project.
 
-9. Select EXTI pin configuration and clock configuration 
+Select ports STM32F401RB, LED and Push Button.
 
-10. once the project is bulild 
+Connect PA9 to Push Button and PA11 to LED.
 
-
-11. click on debug option 
-
-
-
-12.  Creating Proteus project and running the simulation
-We are now at the last part of step by step guide on how to simulate STM32 project in Proteus.
-
-13. Create a new Proteus project and place STM32F40xx i.e. the same MCU for which the project was created in STM32Cube IDE. 
-14. After creation of the circuit as per requirement as shown below 
-<img src="https://user-images.githubusercontent.com/36288975/233856847-32bea88a-565f-4e01-9c7e-4f7ed546ddf6.png" width=450 height=450>
-
-14. Double click on the the MCU part to open settings. Next to the Program File option, give full path to the Hex file generated using STM32Cube IDE. Then set the external crystal frequency to 8M (i.e. 8 MHz). Click OK to save the changes.
-https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
-
-15. click on debug and simulate using simulation as shown below 
-
-
-
+Check for execution of the output using Push Button option
 
   
 
